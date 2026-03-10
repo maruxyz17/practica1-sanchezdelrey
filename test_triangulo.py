@@ -15,3 +15,17 @@ def test_case4_no_triangulo():
 
 def test_case5_no_triangulo_bis():
     assert checktriangle(8, 2, 4) == "No es un triangulo"
+
+#nuevos casos de la parte 2:
+
+def test_simetria_isosceles():
+    # Detecta el bug corregido arriba
+    assert checktriangle(5, 8, 5) == "Triangulo isosceles"
+
+def test_limite_desigualdad():
+    # Rompe el cortocircuito de la condición inicial
+    assert checktriangle(1, 1, 2) == "No es un triangulo"
+
+def test_valores_negativos():
+    # Caso especial de caja negra
+    assert checktriangle(-3, -3, -3) == "No es un triangulo"
